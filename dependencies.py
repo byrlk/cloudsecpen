@@ -1,0 +1,211 @@
+import subprocess
+import sys
+
+def install_python_packages(packages):
+    for package in packages:
+        try:
+            subprocess.check_call([sys.executable, "-m", "pip", "install", package])
+            print(f"Successfully installed {package}")
+        except subprocess.CalledProcessError:
+            print(f"Failed to install {package}")
+
+def install_go_packages(packages):
+    for package in packages:
+        try:
+            subprocess.check_call(["go", "get", package])
+            print(f"Successfully installed {package}")
+        except subprocess.CalledProcessError:
+            print(f"Failed to install {package}")
+
+def main():
+    python_packages = [
+        # Azure 2.1.1 Email Enumeration
+        "dnspython",
+        "requests",
+        "requests_futures",
+        # Azure 2.1.2 Cloud Resource Enumeration
+        "azure-common==1.1.26",
+        "azure-core==1.10.0",
+        "azure-identity==1.5.0",
+        "azure-mgmt-core==1.2.2",
+        "azure-mgmt-resource==15.0.0",
+        "azure-mgmt-storage==16.0.0",
+        "azure-storage-blob==12.6.0",
+        "pyinputplus==0.2.12",
+        "python-dateutil<2.8.1,>=2.1",
+        "netaddr>=0.8.0",
+        "sqlitedict>=1.6.0",
+        "cherrypy>=18.1.0",
+        "cherrypy-cors>=1.6",
+        "coloredlogs<=10.0",
+        "asyncio-throttle==0.1.1",
+        "botocore>=1.20.21",
+        "boto3>=1.9.210",
+        "policyuniverse>=1.3.2.0",
+        "grpcio>=1.18.0",
+        "google-cloud-container>=2.1.0",
+        "google-cloud-core>=0.29.1",
+        "google-cloud-iam>=0.1.0",
+        "google-cloud-logging>=2.2.0",
+        "google-cloud-monitoring==1.1.0",
+        "google-cloud-resource-manager>=0.28.3",
+        "google-cloud-storage>=1.13.2",
+        "google-cloud-kms==1.3.0",
+        "google-api-python-client>=2.47.0",
+        "oauth2client>=4.1.3",
+        "httplib2shim>=0.0.3",
+        "aliyun-python-sdk-core>=2.13.4",
+        "aliyun-python-sdk-ram>=3.0.1",
+        "aliyun-python-sdk-ocs>=0.0.4",
+        "aliyun-python-sdk-sts>=3.0.1",
+        "aliyun-python-sdk-actiontrail>=2.0.0",
+        "aliyun-python-sdk-vpc>=3.0.5",
+        "aliyun-python-sdk-ecs>=4.16.10",
+        "aliyun-python-sdk-rds>=2.3.9",
+        "aliyun-python-sdk-kms>=2.6.0",
+        "oss2>=2.8.0",
+        "oci>=2.2.4",
+        "kubernetes",
+        "pydo>=0.2.0",
+        # Azure 2.3.1 Azure Object Graphing
+        "aiofiles==0.5.0",
+        "aiosqlite==0.15.0",
+        "click==7.1.2",
+        "colorama==0.4.3",
+        "fastapi==0.61.1",
+        "h11==0.9.0",
+        "httptools==0.1.1",
+        "loguru==0.5.1",
+        "neo4j==4.1.1",
+        "orjson==3.3.1",
+        "pydantic==1.6.1",
+        "python-multipart==0.0.5",
+        "pytz==2020.1",
+        "shiv==0.3.0",
+        "six==1.15.0",
+        "starlette==0.13.6",
+        "typing-extensions==3.7.4.3",
+        "uvicorn==0.11.8",
+        "uvloop==0.14.0",
+        "websockets==8.1",
+        "win32-setctime==1.0.1",
+        # Azure 2.3.3 Vulnerability Scanning
+        "astroid==2.8.0",
+        "autopep8==1.5.7",
+        "azure-common==1.1.27",
+        "azure-core==1.18.0",
+        "azure-identity==1.6.1",
+        "azure-mgmt-compute==23.0.0",
+        "azure-mgmt-core==1.3.0",
+        "azure-mgmt-network==19.0.0",
+        "azure-mgmt-resource==20.0.0",
+        "backcall==0.2.0",
+        "black==21.9b0",
+        "certifi==2021.5.30",
+        "cffi==1.14.6",
+        "charset-normalizer==2.0.5",
+        "click==8.0.1",
+        "cryptography==3.4.8",
+        "debugpy==1.4.3",
+        "decorator==5.1.0",
+        "entrypoints==0.3",
+        "flake8==3.9.2",
+        "Flask==2.0.1",
+        "Flask-ReCaptcha==0.4.2",
+        "idna==3.2",
+        "ipykernel==6.4.1",
+        "ipython==7.27.0",
+        "ipython-genutils==0.2.0",
+        "isodate==0.6.0",
+        "isort==5.9.3",
+        "itsdangerous==2.0.1",
+        "jedi==0.18.0",
+        "Jinja2==3.0.1",
+        "jupyter-client==7.0.2",
+        "jupyter-core==4.7.1",
+        "lazy-object-proxy==1.6.0",
+        "MarkupSafe==2.0.1",
+        "matplotlib-inline==0.1.3",
+        "mccabe==0.6.1",
+        "msal==1.14.0",
+        "msal-extensions==0.3.0",
+        "msrest==0.6.21",
+        "mypy==0.910",
+        "mypy-extensions==0.4.3",
+        "nest-asyncio==1.5.1",
+        "numpy==1.21.2",
+        "oauthlib==3.1.1",
+        "packaging==21.0",
+        "parso==0.8.2",
+        "pathspec==0.9.0",
+        "pexpect==4.8.0",
+        "pickleshare==0.7.5",
+        "platformdirs==2.3.0",
+        "portalocker==1.7.1",
+        "prompt-toolkit==3.0.20",
+        "ptyprocess==0.7.0",
+        "pycodestyle==2.7.0",
+        "pycparser==2.20",
+        "pyflakes==2.3.1",
+        "Pygments==2.10.0",
+        "PyJWT==2.1.0",
+        "pylint==2.11.1",
+        "pyparsing==2.4.7",
+        "python-dateutil==2.8.2",
+        "pytz==2021.1",
+        "pyzmq==22.3.0",
+        "regex==2021.8.28",
+        "requests==2.26.0",
+        "requests-oauthlib==1.3.0",
+        "six==1.16.0",
+        "toml==0.10.2",
+        "tomli==1.2.1",
+        "tornado==6.1",
+        "traitlets==5.1.0",
+        "typing-extensions==3.10.0.2",
+        "urllib3==1.26.6",
+        "wcwidth==0.2.5",
+        "Werkzeug==2.0.1",
+        "wrapt==1.12.1",
+        # Azure 2.6.1 Password Spraying
+        "beautifulsoup4>=4.11.1",
+        "colorama>=0.4.5",
+        "lxml>=4.9.1",
+        # AWS 3.4.2 urplepanda
+        "google-api-python-client",
+        "pyyaml",
+        "py2neo",
+        "shodan",
+        "pygithub",
+        "kubernetes",
+        "dnspython",
+        "tld",
+        "rich",
+        "google-cloud-secret-manager",
+        "protobuf",
+        "progress",
+        "dxf",
+        "pydocker",
+        "scapy",
+        "yamale",
+        "mytermcolor",
+        "aws-ps",
+        "aiodocker",
+        "flask_cors",
+        "flask",
+        "nmap",
+        "neo4j",
+        "neo4jrestclient"
+    ]
+
+    go_packages = [
+        # Add Go dependencies here if any
+    ]
+
+    print("Installing Python packages...")
+    install_python_packages(python_packages)
+    print("Installing Go packages...")
+    install_go_packages(go_packages)
+
+if __name__ == "__main__":
+    main()

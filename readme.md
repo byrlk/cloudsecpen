@@ -2,6 +2,8 @@
 
 CloudSecPen is a security penetration testing framework designed for both Azure and AWS environments. This tool provides a user-friendly menu interface to facilitate the enumeration, information gathering, lateral movement, privilege escalation, exploitation, and credential attacks on cloud infrastructures. It integrates multiple third-party tools, allowing security professionals to perform in-depth security assessments with ease.
 
+def print_ascii_art():
+    art = """
        .__                   .___                                         
   ____ |  |   ____  __ __  __| _/______ ____   ____ ______   ____   ____  
 _/ ___\\|  |  /  _ \\|  |  \\/ __ |/  ___// __ \\_/ ___\\\\____ \\_/ __ \\ /    \\ 
@@ -12,6 +14,8 @@ _/ ___\\|  |  /  _ \\|  |  \\/ __ |/  ___// __ \\_/ ___\\\\____ \\_/ __ \\ /    
     Author: Luka Bayer
     Version: 1.0/Beta
     Date: 06/2024
+    """
+    print(art)
 
 ## Features
 

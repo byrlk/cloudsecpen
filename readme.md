@@ -2,20 +2,19 @@
 
 CloudSecPen is a security penetration testing framework designed for both Azure and AWS environments. This tool provides a user-friendly menu interface to facilitate the enumeration, information gathering, lateral movement, privilege escalation, exploitation, and credential attacks on cloud infrastructures. It integrates multiple third-party tools, allowing security professionals to perform in-depth security assessments with ease.
 
-def print_ascii_art():
-    art = """
-       .__                   .___                                         
-  ____ |  |   ____  __ __  __| _/______ ____   ____ ______   ____   ____  
-_/ ___\\|  |  /  _ \\|  |  \\/ __ |/  ___// __ \\_/ ___\\\\____ \\_/ __ \\ /    \\ 
-\\  \\___|  |_(  <_> )  |  / /_/ |\\___ \\\\  ___/\\  \\___|  |_> >  ___/|   |  \\
- \\___  >____/\\____/|____/\\____ /____  >\\___  >\\___  >   __/ \\___  >___|  /
-     \\/                       \\/    \\/     \\/     \\/|__|        \\/     \\/ c
+
+ ________  ___       ________  ___  ___  ________  ________  _______   ________  ________  _______   ________      
+|\   ____\|\  \     |\   __  \|\  \|\  \|\   ___ \|\   ____\|\  ___ \ |\   ____\|\   __  \|\  ___ \ |\   ___  \    
+\ \  \___|\ \  \    \ \  \|\  \ \  \\\  \ \  \_|\ \ \  \___|\ \   __/|\ \  \___|\ \  \|\  \ \   __/|\ \  \\ \  \   
+ \ \  \    \ \  \    \ \  \\\  \ \  \\\  \ \  \ \\ \ \_____  \ \  \_|/_\ \  \    \ \   ____\ \  \_|/_\ \  \\ \  \  
+  \ \  \____\ \  \____\ \  \\\  \ \  \\\  \ \  \_\\ \|____|\  \ \  \_|\ \ \  \____\ \  \___|\ \  \_|\ \ \  \\ \  \ 
+   \ \_______\ \_______\ \_______\ \_______\ \_______\____\_\  \ \_______\ \_______\ \__\    \ \_______\ \__\\ \__\
+    \|_______|\|_______|\|_______|\|_______|\|_______|\_________\|_______|\|_______|\|__|     \|_______|\|__| \|__|
+                                                     \|_________|                                                                                                                                
 
     Author: Luka Bayer
     Version: 1.0/Beta
     Date: 06/2024
-    """
-    print(art)
 
 ## Features
 
